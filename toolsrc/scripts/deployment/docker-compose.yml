@@ -1,0 +1,11 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  deb-toolkit:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production
