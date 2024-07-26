@@ -76,6 +76,13 @@ Deb Toolkit is designed to be intuitive and easy to use. Below are some common c
     ```
     Integrate and run tests for your project.
 
+- **Package Project**
+  ```bash
+  ./deb-toolkit.js package
+  ```
+
+  Package the project.
+
 - **Deploy Project**:
     ```bash
     ./deb-toolkit.js deploy path/to/package.tar.gz server_ip username password
