@@ -24,6 +24,7 @@ To install Deb Toolkit, follow these steps:
 2. Navigate to the project directory:
     ```bash
     cd Deb-toolkit-test
+    cd toolsrc
     ```
 3. Install the required dependencies:
     ```bash
@@ -38,39 +39,43 @@ To install Deb Toolkit, follow these steps:
 
 Deb Toolkit is designed to be intuitive and easy to use. Below are some common commands and their descriptions:
 
+## Make the javascript executable:
+    ```bash
+    chmod +x deb-toolkit.js
+
 - **Analyze Code**:
     ```bash
-    deb-toolkit analyze
+    ./deb-toolkit.js analyze
     ```
     Run static code analysis on your project.
 
 - **Manage Dependencies**:
     ```bash
-    deb-toolkit deps
+    ./deb-toolkit.js deps
     ```
     Manage and resolve project dependencies.
 
 - **Automate Build**:
     ```bash
-    deb-toolkit build
+    ./deb-toolkit.js build
     ```
     Automate the build process with customizable scripts.
 
 - **Run Tests**:
     ```bash
-    deb-toolkit test
+    ./deb-toolkit.js test
     ```
     Integrate and run tests for your project.
 
 - **Deploy Project**:
     ```bash
-    deb-toolkit deploy
+    ./deb-toolkit.js deploy path/to/package.tar.gz server_ip username password
     ```
     Simplify the deployment process.
 
 - **Generate Documentation**:
     ```bash
-    deb-toolkit docs
+    ./deb-toolkit.js docs
     ```
     Automatically generate and update project documentation.
 
