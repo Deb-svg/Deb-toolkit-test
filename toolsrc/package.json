@@ -8,7 +8,8 @@
   },
   "scripts": {
     "analyze": "node deb-toolkit.js analyze",
-    "deps": "node deb-toolkit.js deps"
+    "deps": "node deb-toolkit.js deps",
+    "build": "node deb-toolkit.js build"
   },
   "dependencies": {},
   "devDependencies": {}
