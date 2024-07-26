@@ -35,10 +35,6 @@ To install Deb Toolkit, follow these steps:
     npm run build
     ```
 
-## Usage
-
-Deb Toolkit is designed to be intuitive and easy to use. Below are some common commands and their descriptions:
-
 
 ## Python pip
 
@@ -47,6 +43,10 @@ Deb Toolkit is designed to be intuitive and easy to use. Below are some common c
   apt install python-pip
   ```
 
+
+## Usage
+
+Deb Toolkit is designed to be intuitive and easy to use. Below are some common commands and their descriptions:
 
 - **Make the javascript executable**:
     ```bash
