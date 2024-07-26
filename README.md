@@ -43,6 +43,10 @@ To install Deb Toolkit, follow these steps:
   apt install python-pip
   ```
 
+- **Install Sphinx And Sphimx RTD Theme**
+  ```bash
+  pip install sphinx sphinx-rtd-theme
+  ```
 
 ## Usage
 
