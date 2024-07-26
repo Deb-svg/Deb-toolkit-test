@@ -45,7 +45,7 @@ docs:
 # Clean build artifacts
 clean:
 	@echo "Cleaning build artifacts..."
-	rm -rf toolsrc/docs/build
+	rm -rf toolsrc/scripts/docs/build
 	rm -rf *.egg-info
 	rm -rf toolsrc/build
 	rm -rf toolsrc/dist
