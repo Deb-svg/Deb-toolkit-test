@@ -93,10 +93,6 @@ We welcome contributions from the community! If you would like to contribute to 
     ```
 5. Open a pull request with a detailed description of your changes.
 
-## License
-
-Deb Toolkit is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
 ## Acknowledgements
 
 We would like to thank all the contributors and users who have helped make Deb Toolkit a powerful and versatile tool.
