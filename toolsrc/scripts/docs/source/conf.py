@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.abspath('../../src'))
 # -- Project information -----------------------------------------------------
 
 project = 'Deb Toolkit'
-author = 'Your Name'
+author = 'Deb-svg'
 release = '1.0.0'
 
 # -- General configuration ---------------------------------------------------
