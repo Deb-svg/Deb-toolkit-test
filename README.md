@@ -39,7 +39,16 @@ To install Deb Toolkit, follow these steps:
 
 Deb Toolkit is designed to be intuitive and easy to use. Below are some common commands and their descriptions:
 
-## Make the javascript executable:
+
+## Python pip
+
+- **Install pip**
+  ```bash
+  apt install python-pip
+  ```
+
+
+- **Make the javascript executable**:
     ```bash
     chmod +x deb-toolkit.js
 
