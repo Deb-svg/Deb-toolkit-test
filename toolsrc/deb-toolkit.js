@@ -34,6 +34,10 @@ const commands = {
         const [packagePath, serverIp, username, password] = args;
         console.log('Deploying package...');
         execSync(`python scripts/deploy_to_server.py ${packagePath} ${serverIp} ${username} ${password}`, { stdio: 'inherit' });
+    },
+    docs: () => {
+        console.log('Generating documentation...');
+        execSync('sphinx-build -b html docs/source docs/build', { stdio: 'inherit' });
     }
 };
 
@@ -44,6 +48,6 @@ if (commands[command]) {
     commands[command]();
 } else {
     console.error(`Unknown command: ${command}`);
-    console.log('Available commands: analyze, deps, build, test, package, deploy');
+    console.log('Available commands: analyze, deps, build, test, package, deploy, docs');
     process.exit(1);
 }
