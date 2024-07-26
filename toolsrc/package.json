@@ -4,11 +4,11 @@
   "description": "A comprehensive suite of development tools",
   "main": "deb-toolkit.js",
   "bin": {
-    "deb-toolkit": "./Code Analyzer/deb-toolkit.js"
-    "deb-toolkit": "./Dependency Management/deb-toolkit.js"
+    "deb-toolkit": "./deb-toolkit.js"
   },
   "scripts": {
-    "analyze": "node deb-toolkit.js analyze"
+    "analyze": "node deb-toolkit.js analyze",
+    "deps": "node deb-toolkit.js deps"
   },
   "dependencies": {},
   "devDependencies": {}
