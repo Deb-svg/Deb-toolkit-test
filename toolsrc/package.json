@@ -10,7 +10,10 @@
     "analyze": "node deb-toolkit.js analyze",
     "deps": "node deb-toolkit.js deps",
     "build": "node deb-toolkit.js build",
-    "test": "pytest"
+    "test": "pytest",
+    "package": "python scripts/deploy_package.py",
+    "deploy": "python scripts/deploy_to_server.py",
+    "docs": "sphinx-build -b html docs/source docs/build"
   },
   "dependencies": {},
   "devDependencies": {}
