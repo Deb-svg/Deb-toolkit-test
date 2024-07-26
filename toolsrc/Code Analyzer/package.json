@@ -1,0 +1,14 @@
+{
+  "name": "code-analyzer",
+  "version": "1.0.0",
+  "description": "A analyzer for code",
+  "main": "analyzer.js",
+  "bin": {
+    "deb-toolkit": "./toolsrc/Code Analyzer/analyzer.js"
+  },
+  "scripts": {
+    "analyze": "node analyzer.js analyze"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
