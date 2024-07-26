@@ -19,11 +19,11 @@ To install Deb Toolkit, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Deb-svg/Deb-toolkit.git
+    git clone https://github.com/Deb-svg/Deb-toolkit-test.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd Deb-toolkit
+    cd Deb-toolkit-test
     ```
 3. Install the required dependencies:
     ```bash
