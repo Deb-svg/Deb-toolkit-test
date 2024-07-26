@@ -1,57 +1,49 @@
 #!/usr/bin/env node
 
-const { exec } = require('child_process');
+const { execSync } = require('child_process');
 const path = require('path');
 
-const command = process.argv[2];
-const subcommand = process.argv[3];
-const filePath = process.argv[4];
-const package = process.argv[5];
-
-if (command === 'analyze' && filePath) {
-    const scriptPath = path.join(__dirname, 'code_analyzer.py');
-    exec(`python ${scriptPath} ${filePath}`, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error: ${stderr}`);
+// Define the available commands
+const commands = {
+    analyze: () => {
+        console.log('Running code analyzer...');
+        execSync('python scripts/code_analyzer.py', { stdio: 'inherit' });
+    },
+    deps: () => {
+        console.log('Managing dependencies...');
+        execSync('pip install -r requirements.txt', { stdio: 'inherit' });
+    },
+    build: () => {
+        console.log('Building project...');
+        execSync('python scripts/build_automation.py', { stdio: 'inherit' });
+    },
+    test: () => {
+        console.log('Running tests...');
+        execSync('pytest', { stdio: 'inherit' });
+    },
+    package: () => {
+        console.log('Packaging project...');
+        execSync('python scripts/deploy_package.py', { stdio: 'inherit' });
+    },
+    deploy: () => {
+        const args = process.argv.slice(3);
+        if (args.length !== 4) {
+            console.error('Usage: deb-toolkit deploy <package_path> <server_ip> <username> <password>');
             process.exit(1);
-        } else {
-            console.log(stdout);
         }
-    });
-} else if (command === 'deps') {
-    const scriptPath = path.join(__dirname, 'dependency_manager.py');
-    let execCommand = `python ${scriptPath} ${subcommand} ${filePath}`;
-    if (package) {
-        execCommand += ` ${package}`;
+        const [packagePath, serverIp, username, password] = args;
+        console.log('Deploying package...');
+        execSync(`python scripts/deploy_to_server.py ${packagePath} ${serverIp} ${username} ${password}`, { stdio: 'inherit' });
     }
-    exec(execCommand, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error: ${stderr}`);
-            process.exit(1);
-        } else {
-            console.log(stdout);
-        }
-    });
-} else if (command === 'build') {
-    const scriptPath = path.join(__dirname, 'build_automation.py');
-    let execCommand = `python ${scriptPath} ${subcommand}`;
-    exec(execCommand, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error: ${stderr}`);
-            process.exit(1);
-        } else {
-            console.log(stdout);
-        }
-    });
+};
+
+// Parse command-line arguments
+const [,, command, ...args] = process.argv;
+
+if (commands[command]) {
+    commands[command]();
 } else {
-    console.log("Usage: deb-toolkit <command> <subcommand> [options]");
-    console.log("Commands:");
-    console.log("  analyze <file_path>        Analyze the code.");
-    console.log("  deps install <file_path>   Install dependencies.");
-    console.log("  deps list <file_path>      List dependencies.");
-    console.log("  deps add <file_path> <package>    Add a dependency.");
-    console.log("  deps remove <file_path> <package> Remove a dependency.");
-    console.log("  build clean                Clean the build directory.");
-    console.log("  build compile              Compile the source code.");
-    console.log("  build package              Package the build output.");
+    console.error(`Unknown command: ${command}`);
+    console.log('Available commands: analyze, deps, build, test, package, deploy');
+    process.exit(1);
 }
