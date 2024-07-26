@@ -35,6 +35,22 @@ To install Deb Toolkit, follow these steps:
     npm run build
     ```
 
+## Sphinx
+- **Start Sphinx**
+  ```bash
+  sphinx-quickstart
+  ```
+
+- **Answers for the prompt**:
+  ```shell
+  > Root path for the documentation: .
+  > Separate source and build directories (y/n) [n]: y
+  > Name prefix for templates and static dir: 
+  > Project name: Deb Toolkit
+  > Author name(s): Deb-svg
+  > Project release []: 1.0.0
+  > Project language [en]: en
+  ```
 
 ## Python pip
 
