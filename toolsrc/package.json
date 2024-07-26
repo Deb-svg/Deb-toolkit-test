@@ -9,7 +9,8 @@
   "scripts": {
     "analyze": "node deb-toolkit.js analyze",
     "deps": "node deb-toolkit.js deps",
-    "build": "node deb-toolkit.js build"
+    "build": "node deb-toolkit.js build",
+    "test": "pytest"
   },
   "dependencies": {},
   "devDependencies": {}
